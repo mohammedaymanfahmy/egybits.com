@@ -1,26 +1,26 @@
 export const navigation = [
   {
     id: "0",
-    title: "Features",
+    title: "Services",
     element: "features",
     offset: -152,
   },
   {
     id: "1",
-    title: "Pricing",
-    element: "pricing",
+    title: "Team",
+    element: "team",
     offset: -48,
   },
   {
     id: "2",
-    title: "FAQ",
-    element: "faq",
-    offset: -48,
+    title: "Portfolio",
+    element: "projects",
+    offset: -72,
   },
   {
     id: "3",
-    title: "Projects",
-    element: "projects",
-    offset: -72,
+    title: "FAQ",
+    element: "faq",
+    offset: -48,
   },
 ];

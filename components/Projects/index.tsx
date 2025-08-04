@@ -1,9 +1,8 @@
+"use client";
 import Container from "../Container";
 import { Element } from "react-scroll";
 import styles from "./Projects.module.sass";
-
-// Number of project placeholder boxes to display
-const projectBoxes = Array.from({ length: 6 }, (_, i) => ({ id: i + 1 }));
+import { projects } from "@/constants/projects";
 
 type Props = {};
 
@@ -20,9 +19,9 @@ const Projects = ({}: Props) => {
         </div>
 
         <div className={styles.grid}>
-          {projectBoxes.map((box) => (
-            <div key={box.id} className={styles.card}>
-              {/* Project Image Placeholder */}
+          {projects.map((project) => (
+            <div key={project.id} className={styles.card}>
+              {/* Project Image */}
               <div className={styles.imageContainer}>
                 <div className={styles.imagePlaceholder}>
                   <div className={styles.iconContainer}>
@@ -37,34 +36,49 @@ const Projects = ({}: Props) => {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth={2}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
                     </div>
-                    <p className={styles.iconText}>IMG</p>
+                    <p className={styles.iconText}>{project.category}</p>
                   </div>
                 </div>
               </div>
 
-              {/* Project Content Placeholder */}
+              {/* Project Content */}
               <div className={styles.content}>
-                {/* Title Placeholder */}
-                <div className={styles.titlePlaceholder}></div>
+                {/* Project Title */}
+                <h3 className={styles.projectTitle}>{project.title}</h3>
 
-                {/* Description Placeholder */}
-                <div className={styles.description}>
-                  <div className={styles.descLine}></div>
-                  <div className={`${styles.descLine} ${styles.short}`}></div>
-                </div>
+                {/* Project Description */}
+                <p className={styles.projectDescription}>
+                  {project.description}
+                </p>
 
-                {/* Technology Tags Placeholder */}
+                {/* Technology Tags */}
                 <div className={styles.tags}>
-                  <div className={`${styles.tag} ${styles.small}`}></div>
-                  <div className={`${styles.tag} ${styles.medium}`}></div>
+                  {project.technologies.slice(0, 3).map((tech, index) => (
+                    <span key={index} className={styles.techTag}>
+                      {tech}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span className={styles.techTag}>
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
                 </div>
 
-                {/* View Project Link Placeholder */}
-                <div className={styles.actionPlaceholder}></div>
+                {/* Client */}
+                <p className={styles.client}>Client: {project.client}</p>
+
+                {/* View Project Link */}
+                <a
+                  href={`/projects?project=${project.id}`}
+                  className={styles.viewProject}
+                >
+                  View Project →
+                </a>
               </div>
             </div>
           ))}
@@ -73,12 +87,14 @@ const Projects = ({}: Props) => {
         {/* Call to Action */}
         <div className={styles.cta}>
           <div className={styles.ctaCard}>
-            <h3 className={styles.ctaTitle}>Ready to Start Your Project?</h3>
+            <h3 className={styles.ctaTitle}>Want to See More Details?</h3>
             <p className={styles.ctaDescription}>
-              Let&apos;s discuss how we can bring your ideas to life with
-              cutting-edge technology.
+              Explore our complete portfolio with detailed case studies,
+              technologies used, and project outcomes.
             </p>
-            <button className={styles.ctaButton}>Get Started</button>
+            <a href="/projects" className={styles.ctaButton}>
+              Learn More
+            </a>
           </div>
         </div>
       </Container>

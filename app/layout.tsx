@@ -11,8 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Xora",
-  description: "Xora",
+  title: "Update - Software House",
+  description: "Update - Professional Software Development Services",
 };
 
 export default function RootLayout({
@@ -23,33 +23,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>XORA - SaaS Landing Page Kit</title>
+        <title>Update - Software House</title>
         <meta
           name="description"
-          content="XORA is a comprehensive design kit for startups, offering design files along with production-ready code in React (Next.js), HTML, CSS, and Vanilla JS."
+          content="Update delivers custom software solutions that transform businesses. From web applications to mobile apps, we provide cutting-edge technology services."
         />
-        <meta property="og:url" content="https://ui8-xora.vercel.app/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="XORA - SaaS Landing Page Kit" />
+        <meta property="og:title" content="Update - Software House" />
         <meta
           property="og:description"
-          content="XORA is a comprehensive design kit for startups, offering design files along with production-ready code in React (Next.js), HTML, CSS, and Vanilla JS."
-        />
-        <meta
-          property="og:image"
-          content="https://ui8-xora-ca7b53925e5b.herokuapp.com/facebook.png"
+          content="Update delivers custom software solutions that transform businesses. From web applications to mobile apps, we provide cutting-edge technology services."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://ui8-xora.vercel.app/" />
-        <meta name="twitter:title" content="XORA - SaaS Landing Page Kit" />
+        <meta name="twitter:title" content="Update - Software House" />
         <meta
           name="twitter:description"
-          content="XORA is a comprehensive design kit for startups, offering design files along with production-ready code in React (Next.js), HTML, CSS, and Vanilla JS."
+          content="Update delivers custom software solutions that transform businesses. From web applications to mobile apps, we provide cutting-edge technology services."
         />
-        <meta
-          name="twitter:image"
-          content="https://ui8-xora-ca7b53925e5b.herokuapp.com/twitter.png"
-        ></meta>
       </head>
       <body className={cn(inter.variable, poppins.variable)}>{children}</body>
     </html>
